@@ -8,6 +8,8 @@
     .reveal-right { transform: translateX(26px); }
     .reveal-up { transform: translateY(40px); }
     .reveal.active, .reveal-left.active, .reveal-right.active, .reveal-up.active { opacity: 1; transform: translate(0); }
+    header { justify-content: center; text-align: center; }
+    .reveal, .reveal-left, .reveal-right, .reveal-up { margin-inline: auto; }
     .nav-link.active { color: #EFF3F8; }
     .nav-link.active::after { width: 100%; }
     

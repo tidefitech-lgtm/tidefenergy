@@ -1,0 +1,16 @@
+# robots.txt for Tidef Energy
+# Allow all crawlers and point to sitemap
+User-agent: *
+Allow: /
+
+# Optional crawl-delay for polite crawlers (seconds)
+Crawl-delay: 10
+
+Sitemap: https://tidefenergy.com/sitemap.xml
+
+# Specific AI/Research crawlers (optional)
+User-agent: OpenAI
+Allow: /
+
+User-agent: Anthropic
+Allow: /

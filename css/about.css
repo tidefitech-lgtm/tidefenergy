@@ -7,6 +7,8 @@ body { background: #010B14; color: #EFF3F8; overflow-x: hidden; }
     .reveal-left { transform: translateX(-26px); }
     .reveal-right { transform: translateX(26px); }
     .reveal.active, .reveal-left.active, .reveal-right.active { opacity: 1; transform: translate(0); }
+    header { justify-content: center; text-align: center; }
+    .reveal, .reveal-left, .reveal-right { margin-inline: auto; }
     .nav-link.active { color: #EFF3F8; }
     .nav-link.active::after { width: 100%; }
     

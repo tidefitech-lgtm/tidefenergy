@@ -134,10 +134,17 @@
 
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        if (el.classList.contains('reveal-on-scroll')) {
+          el.classList.add('is-visible');
+          revealObserver.unobserve(el);
+          return;
+        }
+        el.classList.add('active');
       });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-on-scroll').forEach(el => revealObserver.observe(el));
 
     const particlesContainer = document.getElementById('particles');
     for (let i = 0; i < 138; i++) {

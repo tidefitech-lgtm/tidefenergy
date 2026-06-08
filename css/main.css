@@ -28,3 +28,26 @@ body { background: #010B14; color: #EFF3F8; overflow-x: hidden; }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
+
+/* Gold outline + elevated shadow for cards */
+.card-gold {
+  border-color: rgba(213,175,0,0.22) !important;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.45), 0 0 0 4px rgba(213,175,0,0.06);
+}
+
+/* Reveal on scroll animation */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 560ms cubic-bezier(.2,.9,.3,1), transform 560ms cubic-bezier(.2,.9,.3,1);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Slightly stronger elevated shadow utility */
+.shadow-elevated {
+  box-shadow: 0 14px 40px rgba(2,6,23,0.35);
+}

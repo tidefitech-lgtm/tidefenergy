@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Careers | TIDEF Energy Limited</title>
+  <meta name="description" content="Join our fast-growing company today. TIDEF Energy is recruiting skilled workers for various aspects of our ROV and subsea services." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/careers.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#010B14',
+              900: '#020F1C',
+              850: '#031424',
+              800: '#061A2E',
+              700: '#0A2A5E'
+            },
+            tidef: {
+              cyan: '#00C8E0',
+              gold: '#F5A800',
+              ice: '#EFF3F8',
+              muted: '#9FB3C8'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            orbitron: ['Orbitron', 'sans-serif']
+          },
+          boxShadow: {
+            cyan: '0 0 32px rgba(0, 200, 224, 0.25)',
+            gold: '0 18px 40px rgba(245, 168, 0, 0.24)',
+            panel: '0 32px 90px rgba(0, 0, 0, 0.45)'
+          },
+          backgroundImage: {
+            grid: 'linear-gradient(rgba(0,200,224,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,224,.055) 1px, transparent 1px)'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="font-sans antialiased selection:bg-tidef-cyan selection:text-navy-950">
+  
+  <!-- SYSTEM PRELOADER -->
+  <div id="preloader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-navy-950">
+    <div class="relative flex h-24 w-24 items-center justify-center">
+      <div class="loader-ring absolute inset-0 rounded-full border-2 border-transparent"></div>
+      <div class="loader-ring absolute inset-1.5 rounded-full border-2 border-transparent" style="animation-direction: reverse; animation-duration: 2s;"></div>
+      <span class="grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-navy-800 to-navy-900 font-orbitron text-xl font-extrabold text-tidef-gold shadow-cyan">TE</span>
+    </div>
+    <div class="mt-6 font-orbitron text-[10px] font-bold uppercase tracking-[0.3em] text-tidef-cyan animate-pulse">Initializing System...</div>
+  </div>
+
+  <div class="pointer-events-none fixed inset-0 z-0 bg-grid bg-[length:42px_42px] opacity-35"></div>
+
+  <button id="backTop" class="fixed bottom-5 left-4 z-50 grid h-11 w-11 translate-y-3 place-items-center rounded-full border border-tidef-cyan/20 bg-navy-800/70 text-tidef-cyan opacity-0 shadow-panel backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-tidef-cyan hover:text-navy-950" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <a href="https://wa.me/2347088134529" target="_blank" aria-label="Direct WhatsApp Line" class="fixed bottom-5 right-4 z-40 grid h-12 w-12 place-items-center rounded-full bg-[#25D366] text-2xl text-white shadow-[0_16px_32px_rgba(37,211,102,.28)] transition hover:-translate-y-1 hover:scale-105">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" class="fixed inset-x-0 top-0 z-40 flex items-center justify-between px-5 py-5 transition-all duration-300 lg:px-[6%] bg-navy-950/85 backdrop-blur-2xl shadow-panel py-3 border-b border-white/5">
+    <a href="index.html" class="flex items-center gap-3" aria-label="TIDEF Energy home">
+      <span class="grid h-11 w-11 place-items-center rounded-xl border border-tidef-cyan/80 bg-gradient-to-br from-navy-700 to-navy-800 font-orbitron text-sm font-extrabold text-tidef-gold shadow-cyan">TE</span>
+      <span class="leading-none">
+        <span class="block font-orbitron text-lg font-bold uppercase tracking-[0.1em] sm:text-xl">TIDEF <span class="text-tidef-cyan">Energy</span></span>
+        <span class="font-orbitron text-[10px] uppercase tracking-[0.28em] text-tidef-muted">Limited</span>
+      </span>
+    </a>
+
+    <button id="navToggle" class="relative z-50 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/5 text-xl text-white lg:hidden" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul id="navLinks" class="fixed left-[-110%] top-0 z-40 flex h-dvh w-72 flex-col gap-7 border-r border-tidef-cyan/15 bg-navy-950/95 px-8 pt-28 font-medium text-tidef-muted shadow-panel backdrop-blur-2xl transition-all duration-300 lg:static lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-0">
+      <li><a class="nav-link relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="index.html">Home</a></li>
+      <li><a class="nav-link relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="about.html">About</a></li>
+      <li><a class="nav-link relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="services.html">Services</a></li>
+      <li><a class="nav-link active relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="careers.html">Careers</a></li>
+      <li><a class="nav-link relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="contact.html">Contact</a></li>
+    </ul>
+
+    <a href="#talent-network" class="hidden rounded-full border border-tidef-cyan px-5 py-3 font-orbitron text-xs font-bold uppercase tracking-[0.14em] text-tidef-cyan transition hover:bg-tidef-cyan hover:text-navy-950 hover:shadow-cyan lg:inline-flex">Join Talent Pool</a>
+  </nav>
+
+  <main class="relative z-10 pt-24">
+    <!-- INNER PAGE HEADER -->
+    <header class="relative flex min-h-[45svh] items-center overflow-hidden px-5 py-20 lg:px-[6%]">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 opacity-30 mix-blend-luminosity" style="background-image: url('img/subsea III.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-navy-950/40"></div>
+        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-navy-950 to-transparent"></div>
+      </div>
+      
+      <div class="reveal relative z-10 max-w-4xl">
+        <div class="mb-4 inline-flex items-center gap-2 font-orbitron text-[10px] font-bold uppercase tracking-[0.22em] text-tidef-cyan">
+          <a href="index.html" class="hover:text-white transition">Home</a> <i class="fas fa-chevron-right text-[8px] opacity-50"></i> <span>Careers</span>
+        </div>
+        <h1 class="text-4xl font-extrabold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">Join Our <span class="text-tidef-cyan">Fast Growing</span> Company Today!</h1>
+        <p class="mt-5 max-w-2xl text-base leading-8 text-tidef-muted sm:text-lg">We are actively recruiting highly skilled workers for various aspects of our subsea and offshore services. Build a high-impact career with TIDEF Energy Limited.</p>
+      </div>
+    </header>
+
+    <!-- BENEFITS / PERKS SECTION -->
+    <section class="relative bg-gradient-to-b from-navy-950 to-navy-900 px-5 py-20 lg:px-[6%] lg:py-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="reveal text-center max-w-3xl mx-auto mb-16">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-tidef-cyan/15 bg-tidef-cyan/5 px-4 py-2 font-orbitron text-[10px] font-bold uppercase tracking-[0.22em] text-tidef-cyan">Our Culture</div>
+          <h2 class="text-3xl font-extrabold leading-tight tracking-normal sm:text-4xl">Why Work With <span class="text-tidef-cyan">Us</span></h2>
+          <p class="mt-5 text-base leading-8 text-tidef-muted">At TIDEF Energy, we value our personnel. We provide competitive advantages and a secure environment for our team to thrive both onshore and offshore.</p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Benefit 1 -->
+          <div class="reveal-up group p-8 rounded-2xl border border-white/5 bg-navy-800/40 hover:bg-navy-800 transition duration-300 hover:border-tidef-cyan/30">
+            <div class="h-14 w-14 rounded-xl bg-tidef-cyan/10 flex items-center justify-center text-2xl text-tidef-cyan mb-6 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3 class="font-orbitron font-bold text-lg text-white mb-3">Paid Time Off</h3>
+            <p class="text-sm text-tidef-muted leading-relaxed">Comprehensive leave policies including paid sick days and standard vacation days to ensure your work-life balance.</p>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="reveal-up group p-8 rounded-2xl border border-white/5 bg-navy-800/40 hover:bg-navy-800 transition duration-300 hover:border-tidef-cyan/30" style="transition-delay: 100ms;">
+            <div class="h-14 w-14 rounded-xl bg-tidef-cyan/10 flex items-center justify-center text-2xl text-tidef-cyan mb-6 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3 class="font-orbitron font-bold text-lg text-white mb-3">Healthcare</h3>
+            <p class="text-sm text-tidef-muted leading-relaxed">Robust healthcare spending and medical reimbursement accounts to keep you and your dependents protected.</p>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="reveal-up group p-8 rounded-2xl border border-white/5 bg-navy-800/40 hover:bg-navy-800 transition duration-300 hover:border-tidef-cyan/30" style="transition-delay: 200ms;">
+            <div class="h-14 w-14 rounded-xl bg-tidef-cyan/10 flex items-center justify-center text-2xl text-tidef-cyan mb-6 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-mug-hot"></i>
+            </div>
+            <h3 class="font-orbitron font-bold text-lg text-white mb-3">Workplace Perks</h3>
+            <p class="text-sm text-tidef-muted leading-relaxed">Enjoy our facility amenities including team building activities, complimentary food, and premium coffee.</p>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="reveal-up group p-8 rounded-2xl border border-white/5 bg-navy-800/40 hover:bg-navy-800 transition duration-300 hover:border-tidef-cyan/30" style="transition-delay: 300ms;">
+            <div class="h-14 w-14 rounded-xl bg-tidef-cyan/10 flex items-center justify-center text-2xl text-tidef-cyan mb-6 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="font-orbitron font-bold text-lg text-white mb-3">Disability Insurance</h3>
+            <p class="text-sm text-tidef-muted leading-relaxed">We provide company-sponsored long term disability insurance, securing your financial future against the unexpected.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW PROFESSIONAL DEVELOPMENT SECTION -->
+    <section class="border-y border-tidef-cyan/15 bg-gradient-to-b from-navy-900 to-navy-850 px-5 py-20 lg:px-[6%] lg:py-28">
+      <div class="max-w-7xl mx-auto grid gap-12 lg:grid-cols-2 items-center">
+        <div class="reveal-left relative rounded-3xl overflow-hidden shadow-panel border border-white/10 group">
+          <div class="absolute inset-0 bg-navy-950/20 group-hover:bg-transparent transition duration-500 z-10 pointer-events-none"></div>
+          <img src="img/Professional Development.jpg" alt="Subsea Engineering Training" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute bottom-6 left-6 z-20 bg-navy-900/80 backdrop-blur-md border border-tidef-cyan/30 px-5 py-3 rounded-xl">
+            <span class="block font-orbitron font-bold text-tidef-gold">Continuous Training</span>
+            <span class="text-xs text-tidef-ice">Industry standard certification programs.</span>
+          </div>
+        </div>
+        
+        <div class="reveal-right">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-tidef-cyan/15 bg-tidef-cyan/5 px-4 py-2 font-orbitron text-[10px] font-bold uppercase tracking-[0.22em] text-tidef-cyan">Career Growth</div>
+          <h2 class="text-3xl font-extrabold leading-tight tracking-normal sm:text-4xl mb-6">Professional <span class="text-tidef-cyan">Development</span></h2>
+          <p class="text-base leading-8 text-tidef-muted mb-6">Subsea engineering is an ever-evolving field. At TIDEF Energy Limited, we do not just hire personnel; we build industry experts. We heavily invest in the technical upskilling of our workforce.</p>
+          
+          <ul class="grid gap-4 text-sm text-tidef-ice">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-tidef-cyan mt-1 text-lg"></i>
+              <span><strong>ROV Pilot Certification:</strong> Hands-on operational training taking you from fresher to master operator in demanding offshore environments.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-tidef-cyan mt-1 text-lg"></i>
+              <span><strong>Mentorship Programs:</strong> Work alongside veteran engineers who have executed complex campaigns across West African basins.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-tidef-cyan mt-1 text-lg"></i>
+              <span><strong>Safety & Compliance Mastery:</strong> Continuous QHSE training ensuring you meet all global maritime and energy sector regulations.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW TALENT NETWORK CTA BANNER -->
+    <section id="talent-network" class="bg-navy-950 px-5 py-20 lg:px-[6%] lg:py-28">
+      <div class="reveal max-w-5xl mx-auto rounded-[2.5rem] border border-tidef-cyan/20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-navy-800 to-navy-950 p-10 sm:p-16 text-center shadow-cyan overflow-hidden relative">
+        <div class="absolute inset-0 bg-grid bg-[length:42px_42px] opacity-20"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-tidef-cyan/10 blur-[80px] pointer-events-none rounded-full"></div>
+        
+        <div class="relative z-10">
+          <div class="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-tidef-gold/10 border border-tidef-gold/20 text-4xl text-tidef-gold mb-8">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h2 class="text-3xl font-extrabold leading-tight tracking-normal sm:text-5xl text-white mb-6">Join Our <span class="text-tidef-cyan">Talent Network</span></h2>
+          <p class="text-base text-tidef-muted max-w-2xl mx-auto leading-relaxed mb-10">We are always on the lookout for dedicated ROV pilots, subsea engineers, and offshore technicians. If you meet our minimum qualifications and want to be considered for upcoming campaigns, we want to hear from you.</p>
+          
+          <a href="mailto:contact@tidefenergy.richcodeworld.com?subject=Spontaneous Application - Talent Pool&body=Hello TIDEF HR Team,%0D%0A%0D%0AI am writing to submit my CV to your talent network for future subsea/ROV opportunities.%0D%0A%0D%0A[Please attach your CV to this email]%0D%0A%0D%0AThank you." class="inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-tidef-cyan to-[#00a2b6] px-8 py-5 font-orbitron text-sm font-extrabold uppercase tracking-[0.16em] text-navy-950 transition hover:-translate-y-1 hover:brightness-110 hover:shadow-cyan">
+            Email Your Resume <i class="fas fa-paper-plane ml-2"></i>
+          </a>
+          <p class="mt-6 font-orbitron text-[10px] uppercase tracking-widest text-tidef-muted/70">Note: Please attach your valid certifications alongside your CV.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-white/5 bg-[#01080f] px-5 py-14 lg:px-[6%]">
+    <div class="grid gap-10 lg:grid-cols-[1.45fr_.8fr_.8fr_.9fr]">
+      <div>
+        <div class="font-orbitron text-xl font-bold uppercase tracking-[0.1em]">TIDEF <span class="text-tidef-cyan">Energy</span> Limited</div>
+        <p class="mt-5 max-w-sm leading-7 text-tidef-muted">We are an energy company, fully registered to carry out industrial activities in the energy sector as an ROV service provider.</p>
+        <div class="mt-7 flex gap-5 text-xl text-tidef-muted">
+          <a class="transition hover:-translate-y-1 hover:text-tidef-cyan" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a class="transition hover:-translate-y-1 hover:text-tidef-cyan" href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a class="transition hover:-translate-y-1 hover:text-tidef-cyan" href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a class="transition hover:-translate-y-1 hover:text-tidef-cyan" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="font-orbitron text-xs font-bold uppercase tracking-[0.18em] text-tidef-gold">Reach Us</h4>
+        <ul class="mt-6 grid gap-4 text-sm text-tidef-muted">
+          <li><i class="fas fa-phone mr-2 text-tidef-cyan"></i> +234 708 813 4529</li>
+          <li><a href="mailto:contact@tidefenergy.richcodeworld.com" class="hover:text-tidef-cyan transition break-all"><i class="fas fa-envelope mr-2 text-tidef-cyan"></i> contact@tidefenergy.richcodeworld.com</a></li>
+          <li class="leading-relaxed"><i class="fas fa-map-marker-alt mr-2 text-tidef-cyan"></i> 2469 Hoffman Avenue<br>Lagos, Nigeria</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-orbitron text-xs font-bold uppercase tracking-[0.18em] text-tidef-gold">Quick Links</h4>
+        <ul class="mt-6 grid gap-3 text-sm text-tidef-muted">
+          <li><a class="transition hover:text-tidef-cyan" href="services.html">Services</a></li>
+          <li><a class="transition hover:text-tidef-cyan" href="about.html">About Us</a></li>
+          <li><a class="transition hover:text-tidef-cyan" href="careers.html">Careers</a></li>
+          <li><a class="transition hover:text-tidef-cyan" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-orbitron text-xs font-bold uppercase tracking-[0.18em] text-tidef-gold">Working Hours</h4>
+        <ul class="mt-6 grid gap-3 text-sm text-tidef-muted">
+          <li class="flex justify-between border-b border-white/5 pb-2"><span>Mon - Fri:</span> <span class="text-white">8am - 6pm</span></li>
+          <li class="flex justify-between border-b border-white/5 pb-2"><span>Saturday:</span> <span class="text-white">10am - 4pm</span></li>
+          <li class="flex justify-between border-b border-white/5 pb-2"><span>Sunday:</span> <span class="text-tidef-cyan">Closed</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-7 text-sm text-tidef-muted sm:flex-row">
+      <span>Copyright &copy; 2026 TIDEF ENERGY LIMITED. All Rights Reserved.</span>
+      <span>Developed by <span class="text-white font-semibold">RichCodeWorld</span></span>
+    </div>
+  </footer>
+  <script src="js/careers.js"></script>
+</body>
+</html>

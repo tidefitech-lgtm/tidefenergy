@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>About Us | TIDEF Energy Limited</title>
+  <meta name="description" content="Learn about Tidef Energy Limited, our mission, vision, and extensive history in ROV subsea operations and engineering." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#010B14',
+              900: '#020F1C',
+              850: '#031424',
+              800: '#061A2E',
+              700: '#0A2A5E'
+            },
+            tidef: {
+              cyan: '#00C8E0',
+              gold: '#F5A800',
+              ice: '#EFF3F8',
+              muted: '#9FB3C8'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            orbitron: ['Orbitron', 'sans-serif']
+          },
+          boxShadow: {
+            cyan: '0 0 32px rgba(0, 200, 224, 0.25)',
+            gold: '0 18px 40px rgba(245, 168, 0, 0.24)',
+            panel: '0 32px 90px rgba(0, 0, 0, 0.45)'
+          },
+          backgroundImage: {
+            grid: 'linear-gradient(rgba(0,200,224,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,224,.055) 1px, transparent 1px)'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="font-sans antialiased selection:bg-tidef-cyan selection:text-navy-950">
+  
+  <div id="preloader" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-navy-950">
+    <div class="relative flex h-24 w-24 items-center justify-center">
+      <div class="loader-ring absolute inset-0 rounded-full border-2 border-transparent"></div>
+      <div class="loader-ring absolute inset-1.5 rounded-full border-2 border-transparent" style="animation-direction: reverse; animation-duration: 2s;"></div>
+      <span class="grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-navy-800 to-navy-900 font-orbitron text-xl font-extrabold text-tidef-gold shadow-cyan">TE</span>
+    </div>
+    <div class="mt-6 font-orbitron text-[10px] font-bold uppercase tracking-[0.3em] text-tidef-cyan animate-pulse">Initializing System...</div>
+  </div>
+
+  <div class="pointer-events-none fixed inset-0 z-0 bg-grid bg-[length:42px_42px] opacity-35"></div>
+
+  <button id="backTop" class="fixed bottom-5 left-4 z-50 grid h-11 w-11 translate-y-3 place-items-center rounded-full border border-tidef-cyan/20 bg-navy-800/70 text-tidef-cyan opacity-0 shadow-panel backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:bg-tidef-cyan hover:text-navy-950" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <a href="https://wa.me/2347088134529" target="_blank" aria-label="Direct WhatsApp Line" class="fixed bottom-5 right-4 z-40 grid h-12 w-12 place-items-center rounded-full bg-[#25D366] text-2xl text-white shadow-[0_16px_32px_rgba(37,211,102,.28)] transition hover:-translate-y-1 hover:scale-105">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <nav id="navbar" class="fixed inset-x-0 top-0 z-40 flex items-center justify-between px-5 py-5 transition-all duration-300 lg:px-[6%] bg-navy-950/85 backdrop-blur-2xl shadow-panel py-3 border-b border-white/5">
+    <a href="index.html" class="flex items-center gap-3" aria-label="TIDEF Energy home">
+      <span class="grid h-11 w-11 place-items-center rounded-xl border border-tidef-cyan/80 bg-gradient-to-br from-navy-700 to-navy-800 font-orbitron text-sm font-extrabold text-tidef-gold shadow-cyan">TE</span>
+      <span class="leading-none">
+        <span class="block font-orbitron text-lg font-bold uppercase tracking-[0.1em] sm:text-xl">TIDEF <span class="text-tidef-cyan">Energy</span></span>
+        <span class="font-orbitron text-[10px] uppercase tracking-[0.28em] text-tidef-muted">Limited</span>
+      </span>
+    </a>
+
+    <button id="navToggle" class="relative z-50 grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/5 text-xl text-white lg:hidden" aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul id="navLinks" class="fixed left-[-110%] top-0 z-40 flex h-dvh w-72 flex-col gap-7 border-r border-tidef-cyan/15 bg-navy-950/95 px-8 pt-28 font-medium text-tidef-muted shadow-panel backdrop-blur-2xl transition-all duration-300 lg:static lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-0">
+      <li><a class="nav-link relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="index.html">Home</a></li>
+      <li><a class="nav-link active relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="about.html">About</a></li>
+      <li><a class="nav-link relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="services.html">Services</a></li>
+      <li><a class="nav-link relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="careers.html">Careers</a></li>
+      <li><a class="nav-link relative py-2 transition after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-tidef-cyan after:transition-all hover:text-tidef-ice hover:after:w-full" href="contact.html">Contact</a></li>
+    </ul>
+
+    <a href="index.html#contact" class="hidden rounded-full border border-tidef-cyan px-5 py-3 font-orbitron text-xs font-bold uppercase tracking-[0.14em] text-tidef-cyan transition hover:bg-tidef-cyan hover:text-navy-950 hover:shadow-cyan lg:inline-flex">Inquire Online</a>
+  </nav>
+
+  <main class="relative z-10 pt-24">
+    <header class="relative flex min-h-[45svh] items-center overflow-hidden px-5 py-20 lg:px-[6%]">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 opacity-40 mix-blend-luminosity" style="background-image: url('img/Mini-ROV-3.jpg'); background-size: cover; background-position: center;"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-navy-950/40"></div>
+        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-navy-950 to-transparent"></div>
+      </div>
+      
+      <div class="reveal relative z-10 max-w-4xl">
+        <div class="mb-4 inline-flex items-center gap-2 font-orbitron text-[10px] font-bold uppercase tracking-[0.22em] text-tidef-cyan">
+          <a href="index.html" class="hover:text-white transition">Home</a> <i class="fas fa-chevron-right text-[8px] opacity-50"></i> <span>About Us</span>
+        </div>
+        <h1 class="text-4xl font-extrabold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">Corporate <span class="text-tidef-cyan">Profile</span></h1>
+        <p class="mt-5 max-w-2xl text-base leading-8 text-tidef-muted sm:text-lg">Tidef Energy Limited is a fully registered company dedicated to carrying out premium industrial activities and ROV services within the global energy sector.</p>
+      </div>
+    </header>
+
+    <section class="relative overflow-hidden border-y border-tidef-cyan/10 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-850 px-5 py-20 lg:px-[6%] lg:py-28">
+      <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-tidef-cyan/5 blur-[80px] pointer-events-none"></div>
+      <div class="reveal grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
+        
+        <div class="relative z-10">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-tidef-cyan/15 bg-tidef-cyan/5 px-4 py-2 font-orbitron text-[10px] font-bold uppercase tracking-[0.22em] text-tidef-cyan">
+            <i class="fas fa-water text-xs"></i> Who We Are
+          </div>
+          <h2 class="text-3xl font-extrabold leading-tight tracking-normal sm:text-4xl lg:text-5xl">Subsea Engineering <span class="text-tidef-cyan">Excellence</span></h2>
+          <p class="mt-6 text-base leading-8 text-tidef-muted border-l-2 border-tidef-cyan/40 pl-5 italic">TIDEF ENERGY LIMITED personnel have been deeply involved in high-stakes projects alongside other leading ROV companies across the globe.</p>
+          <p class="mt-5 leading-7 text-tidef-ice/90">Our cumulative subsea experience spans deepwater interventions, pipeline campaigns, and asset integrity programs. We bridge the gap between complex underwater engineering challenges and precise, reliable operational execution.</p>
+          
+          <div class="mt-8 flex items-center gap-5 pt-4">
+            <div class="h-14 w-0.5 bg-gradient-to-b from-tidef-cyan/60 to-transparent"></div>
+            <div>
+              <p class="font-orbitron text-[11px] uppercase tracking-[0.2em] text-tidef-muted">Executive Leadership</p>
+              <p class="mt-1 text-xl font-bold text-tidef-ice">Engr Okeke Elijah Eriba <span class="text-tidef-gold text-sm font-normal tracking-wider">(NSE, COREN)</span></p>
+              <p class="text-tidef-cyan/70 text-sm">Chief Executive Officer</p>
+            </div>
+          </div>
+
+          <div class="mt-10 bg-navy-800/40 border border-tidef-cyan/15 rounded-2xl p-6 backdrop-blur-sm max-w-lg">
+            <span class="block font-orbitron text-xs font-bold uppercase tracking-[0.16em] text-tidef-gold mb-3"><i class="fas fa-handshake mr-2"></i> Strategic Partnership</span>
+            <p class="text-sm leading-relaxed text-tidef-muted">We are actively seeking collaborative ventures with both local and foreign partners to scale our subsea capabilities.</p>
+            <a href="mailto:info@tidefenergy.richcodeworld.com" class="inline-flex items-center gap-2 mt-4 text-tidef-cyan font-mono text-xs sm:text-sm break-all border-b border-tidef-cyan/30 hover:border-tidef-cyan transition pb-1">info@tidefenergy.richcodeworld.com <i class="fas fa-paper-plane"></i></a>
+          </div>
+        </div>
+
+        <div class="reveal-right relative rounded-2xl overflow-hidden border border-tidef-cyan/20 shadow-panel group h-[500px]">
+          <img class="w-full h-full object-cover transition duration-700 group-hover:scale-105" src="img/subsea engineering team.jpg" alt="TIDEF Leadership and Operations" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent flex items-end p-6">
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-certificate text-tidef-gold text-2xl"></i>
+              <div>
+                <span class="block font-orbitron text-sm font-bold tracking-widest text-tidef-ice">RC REGISTERED</span>
+                <span class="block font-orbitron text-[10px] uppercase text-tidef-cyan tracking-[0.2em]">ROV SPECIALIST PROVIDER</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="px-5 py-20 lg:px-[6%] bg-gradient-to-b from-navy-850 to-navy-950">
+      <div class="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+        <div class="reveal-left group relative p-8 sm:p-10 rounded-3xl border border-white/5 bg-navy-900 overflow-hidden hover:border-tidef-cyan/30 transition duration-500">
+          <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-tidef-cyan/10 blur-3xl transition group-hover:bg-tidef-cyan/20"></div>
+          <div class="h-14 w-14 rounded-2xl bg-tidef-cyan/10 border border-tidef-cyan/20 flex items-center justify-center text-2xl text-tidef-cyan mb-6">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3 class="font-orbitron text-2xl font-bold text-white mb-4">Our Vision</h3>
+          <p class="text-tidef-muted leading-relaxed text-lg">To serve the industry through innovative technologies in a timely and safest possible manner, adhering to strictly professionally acceptable ways.</p>
+        </div>
+
+        <div class="reveal-right group relative p-8 sm:p-10 rounded-3xl border border-white/5 bg-navy-900 overflow-hidden hover:border-tidef-gold/30 transition duration-500">
+          <div class="absolute -left-10 -bottom-10 h-32 w-32 rounded-full bg-tidef-gold/10 blur-3xl transition group-hover:bg-tidef-gold/20"></div>
+          <div class="h-14 w-14 rounded-2xl bg-tidef-gold/10 border border-tidef-gold/20 flex items-center justify-center text-2xl text-tidef-gold mb-6">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="font-orbitron text-2xl font-bold text-white mb-4">Our Mission</h3>
+          <p class="text-tidef-muted leading-relaxed text-lg">To satisfy our customers through highly effective service delivery, providing the industry's best manpower and subsea equipment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-tidef-cyan/15 bg-gradient-to-b from-navy-950 to-navy-900 px-5 py-20 lg:px-[6%] lg:py-28">
+      <div class="reveal max-w-4xl mx-auto text-center mb-16">
+        <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-tidef-cyan/15 bg-tidef-cyan/5 px-4 py-2 font-orbitron text-[10px] font-bold uppercase tracking-[0.22em] text-tidef-cyan">Operational Footprint</div>
+        <h2 class="text-3xl font-extrabold leading-tight tracking-normal sm:text-4xl">Projects & <span class="text-tidef-cyan">Involvements</span></h2>
+        <p class="mt-5 text-base leading-8 text-tidef-muted">Some major projects where TIDEF ENERGY personnel were involved includes but is not limited to the following deepwater and coastal operations:</p>
+      </div>
+
+      <div class="reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">USAN Field</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">TOTAL:</span> ROV Construction Services.</p>
+        </div>
+        
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">OYO Field</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">Oceaneering International Inc.</span></p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">USAN Field (2010)</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">Oceaneering Int. Nigeria:</span> ROV Construction Services.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">ERHA Field (2007-09)</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">ExxonMobil / Oceaneering:</span> OKONO – SPDC, Tilone Subsea Ltd, ROV Drill Support Services.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">Etan 3</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">SAIPEM AMERICA:</span> Drill Support.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">Ofon 2</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">Subsea 7:</span> Construction Support.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">Akpo Field</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">Hallin Marine / Tilone Subsea:</span> Construction.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">ABO Field</h4>
+          <p class="text-sm text-tidef-muted">SCM Removal & Installations.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">Okwori Field</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">Addax Petroleum.</span></p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">Egina Field</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">TOTAL:</span> Drilling Operations.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-white/5 bg-navy-800/30 hover:border-tidef-cyan/30 hover:bg-navy-800/60 transition duration-300 lg:col-span-2">
+          <h4 class="font-orbitron text-sm font-bold text-tidef-gold mb-2">OSO Clusters / Egina</h4>
+          <p class="text-sm text-tidef-muted"><span class="text-white font-semibold">Exxon / Total:</span> ROV Construction support, Umbilical/flowline Installation, ROV Diver Support, ROV Drill Support, Marine Survey, Field Maintenance, Training of New Pilot Technicians, Electrical wiring, Mattress Installations, Zero Visibility Metrology, Anchor chain inspections, Environmental survey, Heavy subsea Constructions, Risers Inspection, Flowline inspection under zero visibility, Mooring line inspections, and Well Control.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-10 border-t border-white/5 bg-[#01080f] px-5 py-14 lg:px-[6%]">
+    <div class="grid gap-10 lg:grid-cols-[1.45fr_.8fr_.8fr_.9fr]">
+      <div>
+        <div class="font-orbitron text-xl font-bold uppercase tracking-[0.1em]">TIDEF <span class="text-tidef-cyan">Energy</span> Limited</div>
+        <p class="mt-5 max-w-sm leading-7 text-tidef-muted">We are an energy company, fully registered to carry out industrial activities in the energy sector as an ROV service provider.</p>
+        <div class="mt-7 flex gap-5 text-xl text-tidef-muted">
+          <a class="transition hover:-translate-y-1 hover:text-tidef-cyan" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a class="transition hover:-translate-y-1 hover:text-tidef-cyan" href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a class="transition hover:-translate-y-1 hover:text-tidef-cyan" href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a class="transition hover:-translate-y-1 hover:text-tidef-cyan" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="font-orbitron text-xs font-bold uppercase tracking-[0.18em] text-tidef-gold">Reach Us</h4>
+        <ul class="mt-6 grid gap-4 text-sm text-tidef-muted">
+          <li><i class="fas fa-phone mr-2 text-tidef-cyan"></i> +234 708 813 4529</li>
+          <li><a href="mailto:info@tidefenergy.richcodeworld.com" class="hover:text-tidef-cyan transition break-all"><i class="fas fa-envelope mr-2 text-tidef-cyan"></i> info@tidefenergy.richcodeworld.com</a></li>
+          <li class="leading-relaxed"><i class="fas fa-map-marker-alt mr-2 text-tidef-cyan"></i> 20/22 Sulaiman Taiwo Crescent, Off church Street. By Edith Bedell Street Jakande. Lagos, Nigeria.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-orbitron text-xs font-bold uppercase tracking-[0.18em] text-tidef-gold">Quick Links</h4>
+        <ul class="mt-6 grid gap-3 text-sm text-tidef-muted">
+          <li><a class="transition hover:text-tidef-cyan" href="services.html">Services</a></li>
+          <li><a class="transition hover:text-tidef-cyan" href="about.html">About Us</a></li>
+          <li><a class="transition hover:text-tidef-cyan" href="careers.html">Careers</a></li>
+          <li><a class="transition hover:text-tidef-cyan" href="contact.html">Write Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-orbitron text-xs font-bold uppercase tracking-[0.18em] text-tidef-gold">Working Hours</h4>
+        <ul class="mt-6 grid gap-3 text-sm text-tidef-muted">
+          <li class="flex justify-between border-b border-white/5 pb-2"><span>Mon - Fri:</span> <span class="text-white">8am - 6pm</span></li>
+          <li class="flex justify-between border-b border-white/5 pb-2"><span>Saturday:</span> <span class="text-white">10am - 4pm</span></li>
+          <li class="flex justify-between border-b border-white/5 pb-2"><span>Sunday:</span> <span class="text-tidef-cyan">Closed</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-7 text-sm text-tidef-muted sm:flex-row">
+      <span>Copyright &copy; 2026 TIDEF ENERGY LIMITED. All Rights Reserved.</span>
+      <span>Developed by <span class="text-white font-semibold">RichCodeWorld</span></span>
+    </div>
+  </footer>
+  <script src="js/about.js"></script>
+</body>
+</html>

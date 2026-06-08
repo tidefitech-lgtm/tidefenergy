@@ -6,12 +6,10 @@
   <circle cx="100" cy="100" r="55" fill="none" stroke="#FFFFFF" stroke-width="5"/>
   <circle cx="100" cy="100" r="45" fill="none" stroke="#0A2A5E" stroke-width="2"/>
   
-  <!-- White H inside circle -->
-  <rect x="85" y="75" width="8" height="50" fill="#FFFFFF"/>
-  <rect x="92" y="95" width="16" height="8" fill="#FFFFFF"/>
-  <rect x="107" y="75" width="8" height="50" fill="#FFFFFF"/>
+  <!-- White T inside circle -->
+  <path d="M85 80 H115 V95 H95 V120 H105 V95 H115" fill="#FFFFFF"/>
   
-  <!-- Red accent wave on right -->
+  <!-- Gold accent wave on right -->
   <path d="M140 70 Q155 85 150 110 Q145 130 135 140" 
-        fill="none" stroke="#DC143C" stroke-width="12" stroke-linecap="round"/>
+        fill="none" stroke="#F5A800" stroke-width="12" stroke-linecap="round"/>
 </svg>

@@ -36,22 +36,32 @@ Get-ChildItem -Path $PWD -Filter *.html | ForEach-Object {
     $headMatch = [regex]::Match($content, '(?is)<head.*?>(.*?)</head>')
     if (-not $headMatch.Success) { $warnings += "$(Split-Path $path -Leaf): no <head> found"; return }
     $head = $headMatch.Groups[1].Value
-    if ($head -notmatch '(?i)meta\s+name=["\']?robots') { $warnings += "$(Split-Path $path -Leaf): meta robots tag missing" }
-    if ($head -notmatch '(?i)rel=["\']?canonical') { $warnings += "$(Split-Path $path -Leaf): canonical link missing" }
-    if ($head -notmatch '(?i)property=["\']?og:title') { $warnings += "$(Split-Path $path -Leaf): og:title missing" }
-    if ($head -notmatch '(?i)property=["\']?og:description') { $warnings += "$(Split-Path $path -Leaf): og:description missing" }
+    $headLower = $head.ToLower()
 
-    # JSON-LD extraction
-    $jsonMatches = [regex]::Matches($head, '(?is)<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>')
-    if ($jsonMatches.Count -eq 0) { $warnings += "$(Split-Path $path -Leaf): no JSON-LD Organization block found" }
+    if ($headLower.IndexOf('name="robots') -lt 0 -and $headLower.IndexOf("name='robots") -lt 0 -and $headLower.IndexOf('name=robots') -lt 0) { $warnings += "$(Split-Path $path -Leaf): meta robots tag missing" }
+    if ($headLower.IndexOf('rel="canonical') -lt 0 -and $headLower.IndexOf("rel='canonical") -lt 0 -and $headLower.IndexOf('rel=canonical') -lt 0) { $warnings += "$(Split-Path $path -Leaf): canonical link missing" }
+    if ($headLower.IndexOf('og:title') -lt 0) { $warnings += "$(Split-Path $path -Leaf): og:title missing" }
+    if ($headLower.IndexOf('og:description') -lt 0) { $warnings += "$(Split-Path $path -Leaf): og:description missing" }
+
+    # JSON-LD extraction: get script blocks and find those with application/ld+json
+    $scriptMatches = [regex]::Matches($head, '<script.*?</script>', 'Singleline, IgnoreCase')
+    $jsonBlocks = @()
+    foreach ($s in $scriptMatches) {
+        $val = $s.Value
+        if ($val -match 'application/ld\+json') {
+            # remove opening <script ...> and closing </script>
+            $inner = [regex]::Replace($val, '(?is)^<script[^>]*>', '')
+            $inner = [regex]::Replace($inner, '(?is)</script>$', '')
+            $jsonBlocks += $inner.Trim()
+        }
+    }
+    if ($jsonBlocks.Count -eq 0) { $warnings += "$(Split-Path $path -Leaf): no JSON-LD Organization block found" }
     else {
         $foundOrg = $false
-        foreach ($m in $jsonMatches) {
-            $text = $m.Groups[1].Value.Trim()
+        foreach ($text in $jsonBlocks) {
             try {
                 $obj = ConvertFrom-Json -InputObject $text -ErrorAction Stop
             } catch {
-                # try to extract first JSON object
                 $j = [regex]::Match($text, '(?s)\{.*\}')
                 if ($j.Success) {
                     try { $obj = ConvertFrom-Json -InputObject $j.Value -ErrorAction Stop } catch { $warnings += "$(Split-Path $path -Leaf): JSON-LD parse failed"; continue }

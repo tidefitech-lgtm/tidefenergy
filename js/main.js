@@ -140,16 +140,17 @@
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
 
     const particlesContainer = document.getElementById('particles');
-    for (let i = 0; i < 56; i++) {
+    for (let i = 0; i < 138; i++) {
       const particle = document.createElement('span');
-      const size = Math.random() * 2 + 1;
+      const size = Math.random() * 4 + 1.5;
       particle.className = 'absolute rounded-full bg-tidef-cyan/40';
       particle.style.width = size + 'px';
       particle.style.height = size + 'px';
       particle.style.left = Math.random() * 100 + '%';
       particle.style.top = Math.random() * 100 + '%';
-      particle.style.animation = `floatParticles ${10 + Math.random() * 12}s infinite linear`;
-      particle.style.animationDelay = `${Math.random() * -10}s`;
+      particle.style.opacity = (0.35 + Math.random() * 0.45).toFixed(2);
+      particle.style.animation = `floatParticles ${7 + Math.random() * 16}s infinite linear`;
+      particle.style.animationDelay = `${Math.random() * -16}s`;
       particlesContainer.appendChild(particle);
     }
 
